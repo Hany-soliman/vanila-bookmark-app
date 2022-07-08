@@ -103,7 +103,7 @@ const renderStaticContent = () => {
    <span style="--i:14">y</span>
    <span style="--i:15">!</span>
   </div>
-    <img class="img-dodge" src="/giphy-downsized-large.gif" alt="empty">
+    <img class="img-dodge" src="./giphy-downsized-large.gif" alt="empty">
 `)
 }
 
