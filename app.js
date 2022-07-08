@@ -22,7 +22,7 @@ const modalState = () => {
         hideStatic()
         modalContainer.classList.add('show-modal');
     }
-
+    removeHints(0, 1)
 }
 
 
@@ -140,12 +140,7 @@ const checkReqFields = () => {
         createHints(1, 'websiteUrlInvalid')
         return false
     }
-    if (hints[0].hasChildNodes()) {
-        hints[0].removeChild(hints[0].childNodes[0])
-    }
-    if (hints[1].hasChildNodes()) {
-        hints[1].removeChild(hints[1].childNodes[0])
-    }
+removeHints(0, 1)
     const protocolRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#()?&//=]*)/
     if (!protocolRegex.test(websiteUrl.value)) {
         websiteUrl.value = "https://" + websiteUrl.value;
@@ -154,6 +149,16 @@ const checkReqFields = () => {
     return true
 }
 
+//remove hints
+
+const removeHints = (num, num2) => {
+    if(hints[num].hasChildNodes()){
+        hints[num].removeChild(hints[num].childNodes[num])
+    }
+    if (hints[num2].hasChildNodes()) {
+        hints[num2].removeChild(hints[num2].childNodes[num])
+    }
+}
 
 //Create hints for the fields
 const createHints = (num, name) => {
