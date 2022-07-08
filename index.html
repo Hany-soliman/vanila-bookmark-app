@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmark App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--open Modal-->
+<h1 id="show-modal">add bookmark</h1>
+<!--Bookmarks-->
+<div class="container" id="bookmarks-container" >
+</div>
+<div class="static-content" >
+
+</div>
+<!--Modal-->
+<div class="modal-container" id="modal">
+    <div class="modal">
+        <i class="fas fa-times close-icon" id="close-modal"></i>
+        <div class="modal-header">
+            <h3>Add Bookmark</h3>
+        </div>
+        <div class="modal-content">
+            <form id="bookmark-form">
+                <!--Website Name-->
+                <div class="form-group">
+                    <label for="website-name" class="form-label">Website Name</label>
+                    <input type="text" class="form-input" id="website-name">
+                    <div class="hint-container"></div>
+                </div>
+                <!--Website URL-->
+                <div class="form-group">
+                    <label for="website-url" class="form-label">Website URL</label>
+                    <input type="text" class="form-input" id="website-url">
+                    <div class="hint-container"></div>
+                </div>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--script-->
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

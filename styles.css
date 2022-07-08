@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css?family=Karla&display=swap");
+
+
+:root {
+    --primary-color: #CD1313;
+    --border-radius: 5px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--primary-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    font-family: Karla, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 275px;
+    margin: 20px auto 10px;
+    user-select: none;
+}
+
+h1:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/*bookmarks */
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item{
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin: 10px;
+}
+
+.item:hover{
+    background: rgba(0, 0, 0, 0.6);
+}
+
+a{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase
+}
+
+a:link,a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover,a:active{
+    text-decoration: underline;
+}
+
+.fa-times{
+    float: right;
+    cursor: pointer;
+    z-index:2;
+}
+
+.name{
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.name img{
+    height: 20px;
+    width: 20px;
+    vertical-align: sub;
+    margin-right: 5px;
+}
+
+/*Modal styling*/
+.modal-container{
+    background:rgba(0, 0, 0, 0.6);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.show-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    max-width: 95%;
+    width: 500px;
+    animation: modalopen 1s;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.close-icon{
+    float: right;
+    color: #fff;
+    font-size: 24px;
+    position: relative;
+    top:13px;
+    right:13px;
+    cursor: pointer;
+}
+
+.modal-header{
+    background: var(--primary-color);
+    color: #fff;
+    padding: 15px;
+}
+
+h3{
+    margin: 0;
+}
+
+.modal-content{
+    padding: 20px;
+    background: whitesmoke;
+}
+
+/*Form*/
+
+.form-group{
+    height: auto;
+}
+
+.form-input{
+    width: 97%;
+    padding: 5px;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    display: block;
+    outline: none;
+}
+
+.form-label{
+    color: var(--primary-color);
+    display: block;
+}
+
+.hint-container{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.requiredHint{
+    color: #000000;
+}
+button{
+    cursor: pointer;
+    color: #fff;
+    background: var(--primary-color);
+    height: 30px;
+    width: 100px;
+    border:none;
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+}
+
+button:hover{
+    filter: brightness(110%);
+}
+button:focus{
+    outline: none;
+}
+button:active{
+    transform: scale(0.98)
+}
+
+.static-content{
+    margin: 12% 20%;
+}
+
+/*static container*/
+.hide{
+    display: none;
+}
+
+.static-content img {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/*doge*/
+
+.img-dodge {
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.wave {
+    position: relative;
+    font-size: 50px;
+    text-align: center;
+}
+
+.wave span {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    animation: wave 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+
+}
+
+@keyframes wave {
+    0%, 40%, 100% {
+        transform: translateY(0)
+    }
+    20% {
+        transform: translateY(-20px)
+    }
+    0% {
+        color: #eeeeee;
+    }
+    25% {
+        color: #f9f9f9;
+    }
+    50% {
+        color: #cb9800;
+    }
+    75% {
+        color: #e1b303;
+    }
+    100% {
+        color: #000000;
+    }
+}
+
+/*Media Query Large smartphones and tablets*/
+
+@media screen and (max-width: 600px){
+    .container{
+        flex-direction: column;
+    }
+}
